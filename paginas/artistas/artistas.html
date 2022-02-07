@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang ="es-SP">
+<head>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<title>Inicio</title>
+</head>
+
+<style>
+    
+    .grid{
+        display: grid;
+        justify-content: center;
+        grid-template-areas:    "artista descripcion";
+        grid-gap: 5px;
+        grid-template-columns: 30% 30%;
+        grid-column-gap: 100px;
+        margin-top: 75px;
+    }
+
+    .imagen_artista img{
+        width: 350px;
+        border-radius: 50%; 
+    }
+
+    .artista{
+        grid-area: artista; 
+        text-align: center;
+    }
+
+    .descripcion{
+        grid-area: descripcion; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+</style>
+
+<body>
+	<div id="navigation">
+		<ul id=navVar>
+			<li class="nav"><a class="nav" href="/index.html">Inicio</a></li>
+			<li class="nav"><a class="nav" href="/paginas/teclados/teclados.html">Teclados</a></li>
+			<li class="nav"><a class="nav" href="/paginas/cajas/cajas.html">Cajas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/keycaps/keycaps.html">Keycaps</a></li>
+			<li class="nav"><a class="active" href="/paginas/artistas/artistas.html">Artistas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/contacto/contacto.html">Contacto</a></li>
+		</ul>
+    </div>
+
+    <div style="display: flex; flex-direction: column;" id = "artist">
+    </div>
+
+</body>
+</html>

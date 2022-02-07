@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang ="es-SP">
+<head>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Inicio</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $(".descripcion").click(function(){
+            $("#div2").fadeIn("slow");
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $("#artist").click(function(){
+            $("#div1").fadeIn("slow");
+          });
+        });
+    </script>
+    
+</head>
+
+<style>
+    .grid{
+        display: grid;
+        justify-content: center;
+        grid-template-areas:    "producto artista"
+                                "descripcion .";
+        grid-gap: 5px;
+        grid-template-columns: 50% 30%;
+        grid-column-gap: 100px;
+        margin-top: 75px;
+    }
+
+    .producto{
+        grid-area: producto; 
+        text-align: center;
+    }
+
+    .artista{
+        grid-area: artista; 
+        text-align: center;
+    }
+
+    .descripcion{
+        grid-area: descripcion; 
+        text-align: center;
+    }
+    
+    .imagen_producto img{
+        width: 600px;
+    }
+
+    .boton{
+        background-color: #4ecca3;
+        border: none;
+        color: #232931;
+        padding: 0px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+    .img-magnifier-container {
+        position:relative;
+    }
+
+    .img-magnifier-glass {
+        position: absolute;
+        border: 3px solid #000;
+        border-radius: 50%;
+        cursor: none;
+        /*Set the size of the magnifier glass:*/
+        width: 100px;
+        height: 100px;
+    }
+
+    * {box-sizing: border-box;}
+
+</style>
+
+<script>
+    function magnify(imgID, zoom) {
+        var img, glass, w, h, bw;
+        img = document.getElementById(imgID);
+        /*Creacion de la lente de aumento dentro del html*/
+        glass = document.createElement("DIV");
+        glass.setAttribute("class", "img-magnifier-glass");
+        /*Inserción de la lupa en la imagen como hija de esta*/
+        img.parentElement.insertBefore(glass, img);
+        /*Establecemos el fondo de la lupa por medio de la imagen dada y ajustamos su tamaño*/
+        glass.style.backgroundImage = "url('" + img.src + "')";
+        glass.style.backgroundRepeat = "no-repeat";
+        glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+        bw = 3;
+        w = glass.offsetWidth / 2;
+        h = glass.offsetHeight / 2;
+        /*Manejamos los movimientos del cursor y la lupa sobre la imagen*/
+        glass.addEventListener("mousemove", moveMagnifier);
+        img.addEventListener("mousemove", moveMagnifier);
+        
+        function moveMagnifier(e) {
+            var pos, x, y;
+            //Prevenir cualquier otra accion que pueda ocurrir al moverse sobre la imagen
+            e.preventDefault();
+            /*Obtenemos las coordenadas del cursor*/
+            pos = getCursorPos(e);
+            x = pos.x;
+            y = pos.y;
+            /*Evitamos que se pueda usar el zoom fuera de la imagen*/
+            if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+            if (x < w / zoom) {x = w / zoom;}
+            if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+            if (y < h / zoom) {y = h / zoom;}
+            /*Establecemos la posicion de la lupa*/
+            glass.style.left = (x + 260 - w) + "px";
+            glass.style.top = (y + 185- h) + "px";
+            /*Rellenamos el interior de la lupa con la imagen correspondiente a la imagen*/
+            glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+        }
+        function getCursorPos(e) {
+            var a, x = 0, y = 0;
+            e = e || window.event;
+            /*Obtenemos las coordenadas de la imagen*/
+            a = img.getBoundingClientRect();
+            /*Calculamos las coordenadas del cursor relativas a la imagen*/
+            x = e.pageX - a.left;
+            y = e.pageY - a.top;
+            /*Consideramos el scrolling de la página*/
+            x = x - window.pageXOffset;
+            y = y - window.pageYOffset;
+            return {x : x, y : y};
+        }
+    }
+</script>
+
+<body>
+	<div>
+		<ul id=navVar>
+			<li class="nav"><a class="nav" href="/index.html">Inicio</a></li>
+			<li class="nav"><a class="nav" href="/paginas/teclados/teclados.html">Teclados</a></li>
+			<li class="nav"><a class="nav" href="/paginas/cajas/cajas.html">Cajas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/keycaps/keycaps.html">Keycaps</a></li>
+			<li class="nav"><a class="nav" href="/paginas/artistas/artistas.html">Artistas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/contacto/contacto.html">Contacto</a></li>
+		</ul>
+	</div>
+
+    <div class="grid">
+        <div class="producto">
+            <h1>Winchester 1982</h1>
+            <div class="imagen_producto">
+                <img id="imagen" src="/imagenes/1.jpg" alt="producto_1">
+                
+            </div>
+            
+        </div>
+        <div class="artista">
+                <img style="width: 300px;border-radius: 50%; border-width: 50px; border-color: #393e46 ; border-style: solid;" src="/imagenes/John Wayne.png" alt="artista">
+                <h2 id="artist">John Wayne</h2>
+                <div id="div1" style="display:none">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue.
+                    </p>
+                </div>
+                
+                <a href="/paginas/artistas/info_artista.html">
+                    <button style="margin-top: 25px;" class="boton">
+                        <h3>Página de John Wayne</h3>
+                    </button> 
+                </a>
+                
+        </div>
+        <div class="descripcion">
+            <h2 id="desc">Descripción:</h2>
+            <div id="div2" style="display:none">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        magnify("imagen", 3);
+    </script>
+</body>
+</html>

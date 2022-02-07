@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang ="es-SP">
+<head>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Inicio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+        $(".imagen_artista").mouseover(function(){
+            $(".descripcion").slideDown("slow");
+        });
+        });
+    </script>
+</head>
+
+<style>
+    .grid{
+        display: grid;
+        justify-content: center;
+        grid-template-areas:    "artista descripcion";
+        grid-gap: 5px;
+        grid-template-columns: 50% 30%;
+        grid-column-gap: 200px;
+        margin-top: 25px;
+    }
+
+    .artista{
+        grid-area: artista; 
+        text-align: center;
+    }
+
+    .descripcion{
+        grid-area: descripcion; 
+        text-align: center;
+        margin-top: 150px;
+    }
+
+    .imagen_artista img{
+        width: 500px;
+    }
+
+    .boton{
+    background-color: #4ecca3;
+    border: none;
+    color: #232931;
+    padding: 0px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+</style>
+
+<body>
+	<div>
+		<ul id=navVar>
+			<li class="nav"><a class="nav" href="/index.html">Inicio</a></li>
+			<li class="nav"><a class="nav" href="/paginas/teclados/teclados.html">Teclados</a></li>
+			<li class="nav"><a class="nav" href="/paginas/cajas/cajas.html">Cajas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/keycaps/keycaps.html">Keycaps</a></li>
+			<li class="nav"><a class="nav" href="/paginas/artistas/artistas.html">Artistas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/contacto/contacto.html">Contacto</a></li>
+		</ul>
+	</div>
+
+    <div class="grid">
+        <div class="artista">
+            <h1 style="position: absolute; background-color: #232931; left: 745px;">John Wayne</h1>
+            <div class="imagen_artista">
+                <img src="/imagenes/John Wayne2.jpg" alt="artista">
+            </div>
+        </div>
+        <div class="descripcion" style="display:none">
+            <h1>DESCRIPCIÓN</h1>    
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue.
+            </p>
+        </div>
+    </div>
+    <div class="flex-contenedor">
+        <div class="flex-item">
+            <a href="/paginas/producto.html">
+                <img src="/imagenes/4.jpg" alt="teclado_1">
+                <h4>Winchester 1982</h4>
+            </a>
+        </div>
+        <div class="flex-item">
+            <a href="/paginas/producto.html">
+                <img src="/imagenes/3.jpg" alt="teclado_2">
+                <h4>Winchester 1982</h4>
+            </a>
+        </div>
+        <div class="flex-item">
+            <a href="/paginas/producto.html">
+                <img src="/imagenes/2.jpg" alt="teclado_3">
+                <h4>Winchester 1982</h4>
+            </a>
+        </div>
+        <div class="flex-item">
+            <a href="/paginas/producto.html">
+                <img src="/imagenes/1.jpg" alt="teclado_1">
+                <h4>Winchester 1982</h4>
+            </a>
+        </div>
+    </div>
+    <a href="/paginas/artistas/info_artista.html">
+        <button style="width: 400px; height: 100px; position: absolute; left: calc(50% - 200px); margin-bottom: 150px; background-color: #4ecca3; border-radius: 35px ;">
+            <h2 style="color: #232931;">Página de John Wayne</h2>
+        </button>
+    
+    </a>
+
+</body>
+</html>

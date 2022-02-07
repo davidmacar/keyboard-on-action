@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang ="es-SP">
+<head>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Inicio</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $(".descripcion").click(function(){
+            $("#div2").fadeIn("slow");
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $("#artist").click(function(){
+            $("#div1").fadeIn("slow");
+          });
+        });
+    </script>
+    
+</head>
+
+<style>
+    .grid{
+        display: grid;
+        justify-content: center;
+        grid-template-areas:    "producto artista"
+                                "descripcion .";
+        grid-gap: 5px;
+        grid-template-columns: 50% 30%;
+        grid-column-gap: 100px;
+        margin-top: 75px;
+    }
+
+    .producto{
+        grid-area: producto; 
+        text-align: center;
+    }
+
+    .artista{
+        grid-area: artista; 
+        text-align: center;
+    }
+
+    .descripcion{
+        grid-area: descripcion; 
+        text-align: center;
+    }
+    
+    .imagen_producto img{
+        width: 600px;
+    }
+
+    .boton{
+        background-color: #4ecca3;
+        border: none;
+        color: #232931;
+        padding: 0px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+    .img-magnifier-container {
+        position:relative;
+    }
+
+    .img-magnifier-glass {
+        position: absolute;
+        border: 3px solid #000;
+        border-radius: 50%;
+        cursor: none;
+        /*Set the size of the magnifier glass:*/
+        width: 100px;
+        height: 100px;
+    }
+
+    * {box-sizing: border-box;}
+
+</style>
+
+<body>
+	<div>
+		<ul id=navVar>
+			<li class="nav"><a class="nav" href="/index.html">Inicio</a></li>
+			<li class="nav"><a class="nav" href="/paginas/teclados/teclados.html">Teclados</a></li>
+			<li class="nav"><a class="nav" href="/paginas/cajas/cajas.html">Cajas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/keycaps/keycaps.html">Keycaps</a></li>
+			<li class="nav"><a class="nav" href="/paginas/artistas/artistas.html">Artistas</a></li>
+			<li class="nav"><a class="nav" href="/paginas/contacto/contacto.html">Contacto</a></li>
+		</ul>
+	</div>
+
+    <div class="grid">
+        <div class="producto">
+            <h1>Winchester 1982</h1>
+            <div class="imagen_producto">
+                <img id="imagen" src="/imagenes/1.jpg" alt="producto_1">
+                
+            </div>
+            
+        </div>
+        <div class="artista">
+                <img style="width: 300px;border-radius: 50%; border-width: 50px; border-color: #393e46 ; border-style: solid;" src="/imagenes/John Wayne.png" alt="artista">
+                <h2 id="artist">John Wayne</h2>
+                <div id="div1" style="display:none">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue.
+                    </p>
+                </div>
+                
+                <a href="/paginas/artistas/info_artista.html">
+                    <button style="margin-top: 25px;" class="boton">
+                        <h3>Página de John Wayne</h3>
+                    </button> 
+                </a>
+                
+        </div>
+        <div class="descripcion">
+            <h2 id="desc">Descripción:</h2>
+            <div id="div2" style="display:none">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla rhoncus elit ut posuere. Praesent finibus tempus tortor eget mollis. Fusce pharetra pulvinar finibus. Nullam at maximus ipsum. Donec non accumsan arcu, in lacinia turpis. Maecenas dui ante, auctor vitae auctor at, facilisis quis odio. Suspendisse varius quam nec rhoncus congue.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

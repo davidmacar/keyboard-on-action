@@ -1,0 +1,44 @@
+<TECLADOS>
+    <TECLADO>
+        <NOMBRE>Teclado 1</NOMBRE>
+        <TEMA>Dragon Ball</TEMA>
+        <ARTISTA>Belen Rueda</ARTISTA>
+        <IMAGEN>/imagenes/1.jpg</IMAGEN>
+        <PRODUCTO>/paginas/producto.html</PRODUCTO>
+    </TECLADO>
+    <TECLADO>
+        <NOMBRE>Teclado 2</NOMBRE>
+        <TEMA>Aqui no hay quien viva</TEMA>
+        <ARTISTA>Pedro Almodovar</ARTISTA>
+        <IMAGEN>/imagenes/2.jpg</IMAGEN>
+        <PRODUCTO>/paginas/producto.html</PRODUCTO>
+    </TECLADO>
+    <TECLADO>
+        <NOMBRE>Teclado 3</NOMBRE>
+        <TEMA>Dragon Ball</TEMA>
+        <ARTISTA>Belen Rueda</ARTISTA>
+        <IMAGEN>/imagenes/3.jpg</IMAGEN>
+        <PRODUCTO>/paginas/producto.html</PRODUCTO>
+    </TECLADO>
+    <TECLADO>
+        <NOMBRE>Teclado 4</NOMBRE>
+        <TEMA>Aqui no hay quien viva</TEMA>
+        <ARTISTA>Pedro Almodovar</ARTISTA>
+        <IMAGEN>/imagenes/1.jpg</IMAGEN>
+        <PRODUCTO>/paginas/producto.html</PRODUCTO>
+    </TECLADO>
+    <TECLADO>
+        <NOMBRE>Teclado 5</NOMBRE>
+        <TEMA>Dragon Ball</TEMA>
+        <ARTISTA>Belen Rueda</ARTISTA>
+        <IMAGEN>/imagenes/2.jpg</IMAGEN>
+        <PRODUCTO>/paginas/producto.html</PRODUCTO>
+    </TECLADO>
+    <TECLADO>
+        <NOMBRE>Teclado 6</NOMBRE>
+        <TEMA>Aqui no hay quien viva</TEMA>
+        <ARTISTA>Pedro Almodovar</ARTISTA>
+        <IMAGEN>/imagenes/3.jpg</IMAGEN>
+        <PRODUCTO>/paginas/producto.html</PRODUCTO>
+    </TECLADO>
+</TECLADOS>
