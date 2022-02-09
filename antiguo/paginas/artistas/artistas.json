@@ -1,7 +1,0 @@
-{"Artistas":[
-    {"Nombre": "John Wayne","Descripcion": "El mejor pistolero del oeste","Web":"/paginas/artistas/info_artista.html","Imagen": "/imagenes/John Wayne.png" },
-    {"Nombre": "Maria Valverde","Descripcion": "La locura de las flores","Web":"/paginas/artistas/info_artista.html","Imagen": "/imagenes/maria_valverde.jpg" },
-    {"Nombre": "Juan Mota","Descripcion": "La gracia nunca fue lo suyo","Web":"/paginas/artistas/info_artista.html","Imagen": "/imagenes/John Wayne.png" },
-    {"Nombre": "Paco Albacete","Descripcion": "Un clasico donde los haya, manchego ante todo","Web":"/paginas/artistas/info_artista.html","Imagen": "/imagenes/maria_valverde.jpg" },
-    {"Nombre": "Sara Luna","Descripcion": "Gran cantante y compositora","Web":"/paginas/artistas/info_artista.html","Imagen": "/imagenes/John Wayne.png" }
-]}
