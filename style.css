@@ -23,8 +23,7 @@ a{
     width: 100%;
     list-style-type: none;
     overflow: hidden;
-    margin: 0 auto;
-    padding: 0 0 0 0;
+    padding: 25px 0px 25px 0px;
     text-align: center;
 }
 
@@ -66,9 +65,10 @@ li.nav a.active{
 }
 
 #logo_menu{
-    display: inline-block;
-    padding: 0%;
+    float:left;
+    position: absolute;
 }
+
 .flex-contenedor{
     display: flex;
     flex-wrap: wrap;
