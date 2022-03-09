@@ -14,10 +14,13 @@ body{
     color: #eeeeee;
     font-family: 'Open Sans', sans-serif;
 }
+
 a{
     color: #eeeeee;
     text-decoration: none;
 }
+
+/*Barra de navegacion*/
 
 #navVar{
     width: 100%;
@@ -31,26 +34,29 @@ li.nav{
     display: inline-block;
 }
 
-li.nav a.nav{
+
+li.nav a{
     display: block;
-    font-family: 'Bitter', serif;
+    
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 25px;
     color: #eeeeee;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-li.nav a.nav:after{
+li.nav a:after{
     display: block;
     content: '';
     border-bottom: 2px groove #4ecca3;
     transform: scaleX(0);
     margin-top: 14px;
-    /*padding: 14px 16px;*/
     transition: transform 250ms ease-in-out;
 }
 
-li.nav a.nav:hover:not(#active):after {
+li.nav a:hover:not(#active):after {
     transform: scaleX(1);
 }
 
@@ -69,6 +75,7 @@ li.nav a.active{
     position: absolute;
 }
 
+/*Páginas de productos*/
 .flex-contenedor{
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +101,6 @@ li.nav a.active{
 .flex-opcion-menu:hover{
     margin-left: -5px;
     margin-right: -5px;
-    margin-bottom: -5px;
     margin-top: -5px;
 }
 
@@ -107,7 +113,6 @@ li.nav a.active{
     border-style: solid;
 }
 
-/**/
 .flex-a{
     padding: 0px 75px;
 }
@@ -137,9 +142,6 @@ li.nav a.active{
     border-width: 5px;
     border-style: solid;
 }
-/**/
-
-
 
 #flex-active{
     margin-left: -5px;
@@ -168,7 +170,6 @@ li.nav a.active{
 .flex-item:hover{
     margin-left: -5px;
     margin-right: -5px;
-    margin-bottom: -5px;
     margin-top: -5px;
 }
 
@@ -192,4 +193,74 @@ li.nav a.active{
     .flex-ccontenedor {
         flex-direction: column;
     }
+}
+
+/*Breadcrumbs*/
+/*No se activa al pasar por el before*/
+
+.breadcrumb {
+    line-height: 30px;
+    height: 30px;
+    margin: 0 10px 10px -8px; /*Margen izquierdo -8px (el margen predeterminado del body)*/
+}
+.breadcrumb > a {
+    position: relative;
+    float: left;
+    background: #16a085;
+    padding: 0 10px 0 20px;
+    transition: all 0.1s ease-in-out;
+}
+.breadcrumb > a:before {
+    content: "";
+    left: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    border-width: 15px 0 15px 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #16a085;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.breadcrumb > a:hover, .breadcrumb > a .active {
+    background: #4ecca3;
+    color: #eeeeee;
+}
+
+.breadcrumb > a:hover + a:before, .breadcrumb > a .active + a:before {
+    border-color: transparent transparent transparent #4ecca3;
+}
+
+.breadcrumb > a:first-child {
+    /*Para el primer elemento de los breadcrumbs (antes era para ponerle un margen redondeado  la izuqierda)*/
+}
+
+.breadcrumb > a:last-child{
+    color: #393e46;
+}
+
+.breadcrumb > a:first-child:before {
+    display: none;
+}
+
+.breadcrumb > a:last-child {
+    padding-right: 20px;
+    border-radius: 0 4px 4px 0;
+}
+
+.breadcrumb > a:last-child:after{
+    content: "";
+    right: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    border-width: 15px 0 15px 15px;
+    border-style: solid;
+    border-color: #232931 transparent #232931 #16a085;
+    transition: all 0.1s ease-in-out;
+} 
+
+.breadcrumb a:hover::after {
+    border-color: #232931 transparent #232931 #4ecca3;
 }

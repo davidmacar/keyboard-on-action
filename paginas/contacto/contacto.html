@@ -8,41 +8,28 @@
 	
 	<style>
 		/**/
-		.grid_resumen {
+		.grid_layout{
 			display: grid;
 			justify-content: center;
-			grid-template-areas:    "titulo texto"
-									"subtitulo texto"
-									"subtitulo texto";
-			grid-gap: 5px;
-			grid-template-columns: 35% 35%;
-			grid-column-gap: 300px;
-			margin-top: 75px;
+			grid-template-areas: "titulo titulo"
+								 "subtitulo subtitulo" 
+								 "nombre mail"
+								 "mensaje mensaje"
+								 "enviar enviar";
+			grid-template-columns: 45% 45%;
 		}
+
 		.titulo { 
 			grid-area: titulo; 
+			text-align: justify;
 			word-wrap: normal;
-			text-align: center;
+			margin: 0 20%;
 		}
+
 		.subtitulo { 
 			grid-area: subtitulo; 
-			text-align: center;
-		}
-		.texto { 
-			grid-area: texto; 
-			text-align: center;
-		}
-		
-		.grid_contacto{
-			display: grid;
-			justify-content: center;
-			grid-template-areas:    "nombre mail"
-									"mensaje mensaje"
-									"enviar enviar";
-			grid-gap: 5px;
-			grid-template-columns: 20% 20%;
-			grid-column-gap: 100px;
-			margin-top: 150px;
+			text-align: justify;
+			margin: 2.5% 5%;
 		}
 		
 		.nombre{
@@ -66,20 +53,46 @@
 		}
 		
 		.boton{
-			background-color: #4ecca3;
+			background-color: #16a085;
 			border: none;
 			color: #232931;
-			padding: 12px 40px;
+			padding: 20px 60px;
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
 			margin: 4px 2px;
 			cursor: pointer;
 			border-radius: 16px;
+			font-family: 'Open Sans', sans-serif;
+			font-size: medium;
 		}
 		
 		.boton:hover{
-			background-color:turquoise;
+			background-color:#4ecca3;
+		}
+
+		.label{
+			font-size: larger;
+		}
+
+		.input_datos{
+			width: 50%; 
+			height: 40px; 
+			border-radius: 15px; 
+			background-color: #393e46; 
+			color: #eeeeee;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		.input_mensaje{
+			background-color: #393e46; 
+			color: #eeeeee; 
+			width: 80%; 
+			height: 500px; 
+			border-radius: 15px;
+			padding: 10px;
+			box-sizing: border-box;
 		}
 	</style>
 
@@ -89,51 +102,60 @@
 		<!--Cabecera-->
 		<img id="logo_menu"  src="/imagenes/logo.png" width="100" height="100" alt="Logo de la plataforma">
 		<ul id="navVar">
-			<li class="nav"><a class="nav" href="/index.html">Inicio</a> </li>
-			<li class="nav"><a class="nav" href="/paginas/cajas/cajas.html">Cajas</a> </li>
-			<li class="nav"><a class="nav" href="/paginas/teclados/teclados.html">Teclados</a> </li>
-			<li class="nav"><a class="nav" href="/paginas/keycaps/keycaps.html">Keycaps</a> </li>
-			<li class="nav"><a class="nav" href="/paginas/artistas/artistas.html">Artistas</a> </li>
-			<li class="nav"><a class="nav" href="/paginas/contacto/contacto.html">Contacto</a> </li>
+			<li class="nav"><a href="/index.html">Inicio</a> </li>
+			<li class="nav"><a href="/paginas/cajas/cajas.html">Cajas</a> </li>
+			<li class="nav"><a href="/paginas/teclados/teclados.html">Teclados</a> </li>
+			<li class="nav"><a href="/paginas/keycaps/keycaps.html">Keycaps</a> </li>
+			<li class="nav"><a href="/paginas/artistas/artistas.html">Artistas</a> </li>
+			<li class="nav"><a href="/paginas/contacto/contacto.html">Contacto</a> </li>
 		</ul>
 
 		<!--Breadcrumbs-->
-		<ol>
-			<li><a href="/index.html">Inicio</a></li>
-			<li><a>Contacto</a></li>
-		</ol>
+		<div class="breadcrumb">
+			<a href="/index.html">Inicio</a>
+			<a>Contacto</a>
+		</div>
 
-		<h1>
-			Si buscas una plataforma en la que expresar tu arte de forma accesible al público, estás en el lugar adecuado.
-		</h1>
-
-		<h2>
-			En KeyBoard On Action buscamos proporcionar un espacio libre para que artistas del gremio de los teclados puedan darse a conocer de forma sencilla y llamativa para el comprador final. Nuestra intención es ofrecer a los nuevos artistas una comunidad en la que mostrar sus obras y trasladar a los compradores sus ideas de diseño y habilidades, así como compartir cualquier método de contacto directo para aquellos interesados en su arte. De igual forma, para aquellos que simplemente disfruten el mundo del teclado, KeyBoard On Action supone una galería de obras con estilos muy heterogéneos y que acerca a los artistas al cliente para facilitar el contacto y la cooperación entre ambas partes. 
-		</h2>
+		<div class="grid_layout">
+			<h1 class="titulo">
+				Si buscas una plataforma en la que expresar tu arte de forma accesible al público, estás en el lugar adecuado.
+			</h1>
 	
-		<div class="grid_contacto">
+			<h2 class="subtitulo">
+				En KeyBoard On Action buscamos proporcionar un espacio libre para que artistas del gremio de los teclados puedan darse a conocer de forma sencilla y llamativa para el comprador final. Nuestra intención es ofrecer a los nuevos artistas una comunidad en la que mostrar sus obras y trasladar a los compradores sus ideas de diseño y habilidades, así como compartir cualquier método de contacto directo para aquellos interesados en su arte. De igual forma, para aquellos que simplemente disfruten el mundo del teclado, KeyBoard On Action supone una galería de obras con estilos muy heterogéneos y que acerca a los artistas al cliente para facilitar el contacto y la cooperación entre ambas partes. 
+			</h2>
+
 			<div class="nombre">
 				<form>
-					<label style="font-size: larger;" for="nombre">Nombre:</label><br>
-					<input id="textoNombre" style="width: 300px; height: 40px; border-radius: 15px; background-color: #393e46; flex-wrap: wrap; color: #eeeeee;" type="text" id="nombre">
+					<label class="label" for="nombre">Nombre:</label>
+					<br>
+					<input class="input_datos" id="textoNombre"  type="text" >
 				</form>
 			</div>
+			
 			<div class="mail">
 				<form>
-					<label style="font-size: larger;" for="mail">E-mail:</label><br>
-					<input id="textoEmail" style="width: 300px; height: 40px; border-radius: 15px; background-color: #393e46; flex-wrap: wrap; color: #eeeeee;" type="text" id="mail">
+					<label class="label" for="mail">E-mail:</label>
+					<br>
+					<input class="input_datos" id="textoEmail" type="text" id="mail">
 				</form>
 			</div>
-			<div class="mensaje" style="margin-top: 50px;">
+
+			<div class="mensaje" style="margin-top: 3%;">
 				<form>
-					<label style="font-size: larger; margin-top: 100px;" for="mensaje">Mensaje:</label><br>
-					<textarea id="textoEnviar"  placeholder="Escribe aqui tu mensaje..." style="background-color: #393e46; color: #eeeeee; width: 800px; height: 250px; border-radius: 15px;" id="mensaje" name="mensaje"></textarea>
+					<label class="label" for="mensaje">Mensaje:</label>
+					<br>
+					<textarea class="input_mensaje" id="mensaje"  placeholder="Escribe aqui tu mensaje..."  name="mensaje"></textarea>
 				</form>
 			</div>
+
 			<div class="enviar">
 				<button id="btnEnviar" class="boton">Enviar</button>
 			</div>
+
 		</div>
+		
+	
 		
 		
 	</body>
