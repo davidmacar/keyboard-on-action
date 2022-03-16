@@ -13,6 +13,9 @@ body{
     background-color: #232931;
     color: #eeeeee;
     font-family: 'Open Sans', sans-serif;
+    position: relative;
+    min-height: 100vh; /*100% de la altura del Viewport*/
+    margin: 0PX;
 }
 
 a{
@@ -201,7 +204,7 @@ li.nav a.active{
 .breadcrumb {
     line-height: 30px;
     height: 30px;
-    margin: 0 10px 10px -8px; /*Margen izquierdo -8px (el margen predeterminado del body)*/
+    margin: 0 10px 10px 0px; /*Margen izquierdo -8px (el margen predeterminado del body)*/
 }
 .breadcrumb > a {
     position: relative;
@@ -263,4 +266,48 @@ li.nav a.active{
 
 .breadcrumb a:hover::after {
     border-color: #232931 transparent #232931 #4ecca3;
+}
+
+/*Footer*/
+.separador-footer{
+    padding-top: 5rem;
+    height: 10rem; /*10 veces el tamaño de la fuente predeterminada del documento raíz HTML*/
+    margin: 0px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #393e46;
+    height: 10rem;
+    width: 100%;
+    color: #eeeeee;
+}
+.footer-superior{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-inferior{
+    background: #000;
+    width: 100%;
+    padding: 1% 0px 1% 0px;
+    text-align: center;
+}
+
+.footer-inferior ul{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+.footer-inferior ul li{
+    padding-right: 3%;
+    display: block;
+}
+.footer-inferior ul li a:hover{
+    color: #4ecca3;
 }

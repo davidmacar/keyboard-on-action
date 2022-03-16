@@ -4,16 +4,14 @@
 		<title>Página del Producto - Keyboard on Action</title>
 		<meta charset="utf-8" lang="es-ES">
 		<link rel="stylesheet" type="text/css" href="/style.css">
+
 	</head>
-	
-	<!--¿Cambiar el grid por un flex de dos elementos?-->
 	
 	<style>
 		.grid_layout{
 			display: grid;
 			justify-content: center;
-			grid-template-areas:    "producto artista"
-									"descripcion .";
+			grid-template-areas:    "producto artista";
 			grid-template-columns: 60% 40%;
 			grid-column-gap: 10%;
 			margin: 20px 10% auto 10%
@@ -33,18 +31,17 @@
 			text-align: center;
 		}
 	
-		.descripcion{
-			grid-area: descripcion; 
+		.descripcion{ 
 			text-align: justify;
 		}
 		
 		.descripcion > h2{
 			text-align: center;
-			margin-top: 15%;
+			margin-top: 5%;
 		}
 
 		.imagen_producto{
-			width: 100%;
+			width: 75%;
 		}
 
 		.artista > img{
@@ -56,7 +53,7 @@
 		}
 
 		.artista > h2{
-			margin-top: 20%;
+			margin-top: 5%;
 		}
 		
 		.artista > p{
@@ -77,7 +74,7 @@
 		}
 	
 	</style>
-
+	
 	<body>
 		
 		<!--Cabecera-->
@@ -102,7 +99,11 @@
 		<div class="grid_layout">
 			<div class="producto">
 				<h1>TOFU96</h1>
-					<img class="imagen_producto" src="/imagenes/ejemplo_teclado.jpg" alt="Imagen del producto">	
+				<img class="imagen_producto" src="/imagenes/ejemplo_teclado.jpg" alt="Imagen del producto">	
+				<div class="descripcion">
+					<h2>Descripción del producto</h2>
+					<p> El teclado TOFU96, con una estética innovadora y unos materiales de primerísima calidad trabajados personalmente por el autor, proporciona una comodidad extrema al escribir y un atractivo visual innegable. Su cuidadosa fabricación le permite tener el doble de durabilidad que la media de mercado.</p>
+				</div>
 			</div>
 
 			<div class="artista">
@@ -114,13 +115,25 @@
 						<h3>Página personal del artista</h3>
 					</button>
 				</a>
-
 			</div>
-			<div class="descripcion">
-				<h2>Descripción del producto</h2>
-				<p> El teclado TOFU96, con una estética innovadora y unos materiales de primerísima calidad trabajados personalmente por el autor, proporciona una comodidad extrema al escribir y un atractivo visual innegable. Su cuidadosa fabricación le permite tener el doble de durabilidad que la media de mercado.</p>
-			</div>
-
 		</div>
+
+		<!--Footer-->
+		<div class="separador-footer"> </div>
+		<footer>
+			<div class="footer-superior">
+				<h3>Keyboard on Action</h3>
+				<p>Si buscas una plataforma en la que expresar tu arte de forma accesible al público, estás en el lugar adecuado.</p>
+			</div>
+			<div class="footer-inferior">
+					<ul>
+						<li><a href="/index.html">Inicio</a></li>
+						<li><a href="/paginas/artistas/artistas.html">Artistas</a></li>
+						<li><a href="/paginas/teclados/teclados.html">Teclados</a></li>
+						<li><a href="/paginas/contacto/contacto.html">Contacto</a></li>
+					</ul>
+			</div>
+		</footer>
+		
 	</body>
 </html>
