@@ -199,7 +199,6 @@ li.nav a.active{
 }
 
 /*Breadcrumbs*/
-/*No se activa al pasar por el before*/
 
 .breadcrumb {
     line-height: 30px;
@@ -310,4 +309,95 @@ footer{
 }
 .footer-inferior ul li a:hover{
     color: #4ecca3;
+}
+
+/*Mostrador de artistas*/
+.bloque-artista{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin: 5vw 13vw;
+}
+
+.bloque-artista > p{
+    margin-left: 10vw;
+}
+
+.imagen-artista{
+    width: 30vw;
+}
+
+.imagen-artista > img{
+    border-radius: 50%;
+    width: 25vw;
+    max-width: 300px;
+}
+
+.imagen-artista:hover > img{
+    border-color: #4ecca3;
+    border-width: 5px;
+    border-style: solid;
+    margin: -5px -5px;
+}
+
+.imagen-artista > h1{
+    margin: 2vh 1vh 0vh 1vh;
+}
+
+/*Pagina del artista*/
+.artista-flex{
+    display: flex;
+}
+
+.artista{
+    text-align: center;
+    margin: 1vh 10vw 2vh 5vw;
+    position: relative;
+    display: inline-block;
+}
+
+.artista > img{
+    width: 40vw;
+}
+.artista > h2{
+    position: absolute;
+    top: 0;
+    right: -3em;
+    background-color: #232931;
+}
+
+.descripcion-artista{
+    text-align: center;
+    margin: 0vh 5vw 2vh 0vw;
+}
+
+.descripcion-artista > p{
+    text-align: justify;
+
+}
+
+.descripcion-artista > h1{
+    margin-top: 0;
+}
+
+.bloque-boton-artista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-pagina-artista{
+    background-color: #16a085;
+    border: none;
+    color: #232931;
+    padding: 20px 100px;
+    text-align: center;
+    border-radius: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: medium; 
+}
+    
+.boton-pagina-artista:hover{
+    background-color:#4ecca3;
 }
