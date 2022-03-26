@@ -1,0 +1,8 @@
+ESTILOS: 
+(COMUNES)
+- Menu cabecera
+- Breadcrumbs
+- Fondo pagina
+
+CODIGO: 
+- Añadir pie de pagina
