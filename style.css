@@ -326,6 +326,7 @@ footer{
 
 .imagen-artista{
     width: 30vw;
+    background-color: #232931;
 }
 
 .imagen-artista > img{

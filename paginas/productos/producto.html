@@ -4,9 +4,31 @@
 		<title>Página del Producto - Keyboard on Action</title>
 		<meta charset="utf-8" lang="es-ES">
 		<link rel="stylesheet" type="text/css" href="/style.css">
-
+		<script type="text/javascript" src="/scripts/jquery-3.6.0.js"></script>
+		<script type="text/javascript" src="/scripts/jquery.mlens-1.7.min.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$("#imagen-producto").mlens(
+				{
+					imgSrc: $("#imagen-producto").attr("data-big"),	  // path of the hi-res version of the image
+					lensShape: "circle",                // shape of the lens (circle/square)
+					lensSize: 180,            // lens dimensions (in px or in % with respect to image dimensions)
+														// can be different for X and Y dimension
+					borderSize: 4,                  // size of the lens border (in px)
+					borderColor: "#fff",            // color of the lens border (#hex)
+					borderRadius: 0,                // border radius (optional, only if the shape is square)
+					zoomLevel: 1,          // zoom level multiplicator (number)
+					responsive: true       // true if mlens has to be responsive (boolean)
+				}); 
+				
+			});
+		</script>
 	</head>
 	
+	
+
 	<style>
 		.grid_layout{
 			display: grid;
@@ -26,7 +48,7 @@
 			margin: 0px auto 10px auto; 
 		}
 	
-		.artista{
+		.artista-producto{
 			grid-area: artista; 
 			text-align: center;
 		}
@@ -40,11 +62,13 @@
 			margin-top: 5%;
 		}
 
-		.imagen_producto{
+		#img-producto-wrapper {
+			position: relative;
 			width: 75%;
+			margin: auto;
 		}
 
-		.artista > img{
+		.artista-producto > img{
 			width: 60%;
 			border-radius: 50%; 
 			border-width: 20px; 
@@ -52,11 +76,11 @@
 			border-style: solid;
 		}
 
-		.artista > h2{
+		.artista-producto > h2{
 			margin-top: 5%;
 		}
 		
-		.artista > p{
+		.artista-producto > p{
 			text-align: justify;
 		}
 		.boton{
@@ -99,15 +123,18 @@
 		<div class="grid_layout">
 			<div class="producto">
 				<h1>TOFU96</h1>
-				<img class="imagen_producto" src="/imagenes/ejemplo_teclado.jpg" alt="Imagen del producto">	
+				<div id="img-producto-wrapper">
+					<img id="imagen-producto" src="/imagenes/teclado.jpg" alt="Imagen del producto" data-big="/imagenes/teclado.jpg">
+				</div>
+					
 				<div class="descripcion">
 					<h2>Descripción del producto</h2>
 					<p> El teclado TOFU96, con una estética innovadora y unos materiales de primerísima calidad trabajados personalmente por el autor, proporciona una comodidad extrema al escribir y un atractivo visual innegable. Su cuidadosa fabricación le permite tener el doble de durabilidad que la media de mercado.</p>
 				</div>
 			</div>
 
-			<div class="artista">
-				<img src="/imagenes/chaval.jpg" alt="Imagen personal del autor">
+			<div class="artista-producto">
+				<img src="/imagenes/john_wayne.png" alt="Imagen personal del autor">
                 <h2>John Wayne</h2>
 				<p> Pepe Pérez, el autor original del TOFU96, define este como uno de sus diseños más inspirados y, a la vez, ambiciosos. En él, intentó combinar una estética vanguardista con detalles de corte tradicional para crear un teclado que aúna lo mejor de los dos mundos; además de tener una calidad tope de gama </p>
 				<a href="/paginas/artistas/info_artista.html">
@@ -135,5 +162,7 @@
 			</div>
 		</footer>
 		
+		
 	</body>
+	
 </html>

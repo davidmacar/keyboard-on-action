@@ -6,11 +6,8 @@
 </head>
 
 <style>
-	#panel-inicio{
-		background-color: #1b1b19;
-	}
-
-	#panel-inicio img{
+	
+	.imagen-panel-inicio{
 		width:35%; 
 		height:35%; 
 		display: block; 
@@ -36,26 +33,31 @@
 		<a>Inicio</a>
 	</div>
 
-	<div id="panel-inicio">
-		<img src="/imagenes/ejemplo.jpg">
+	<div id="panel-inicio" style="position: relative; background-color: #1b1b19;">
+		<img class="imagen-panel-inicio" src="/imagenes/teclado.jpg">
+		<img class="imagen-panel-inicio" src="/imagenes/caja.jpg">
+		<img class="imagen-panel-inicio" src="/imagenes/keycap.jpg">
+	  
+		<button onclick="plusDivs(-1)" style="background-color: #232931; position:absolute; margin-top: -19%; margin-left: 25%; border-radius: 50%;"><img src="/imagenes/flecha-izquierda.png" style="height: 30px; width: 30px"></button>
+		<button onclick="plusDivs(1)" style="background-color: #232931; position:absolute; margin-top: -19%; margin-left: 75%; border-radius: 50%;"><img src="/imagenes/flecha-derecha.png" style="height: 30px; width: 30px">;</button>
 	</div>
 
 	<div class="flex-contenedor">
 		<div class="flex-opcion-menu">
 			<a href="/paginas/teclados/teclados.html">
-				<img src="/imagenes/ejemplo.jpg" alt="teclado_icono">
+				<img src="/imagenes/teclado.jpg" alt="teclado_icono">
 				<h3>Teclados</h3>
 			</a>
 		</div>
 		<div class="flex-opcion-menu">
 			<a href="/paginas/cajas/cajas.html">
-				<img src="/imagenes/ejemplo.jpg" alt="caja_icono">
+				<img src="/imagenes/caja.jpg" alt="caja_icono">
 				<h3>Cajas</h3>
 			</a>
 		</div>
 		<div class="flex-opcion-menu">
 			<a href="/paginas/keycaps/keycaps.html">
-				<img src="/imagenes/ejemplo.jpg" alt="keycap_icono">
+				<img src="/imagenes/keycap.jpg" alt="keycap_icono">
 				<h3>Keycaps</h3>
 			</a>
 		</div>
@@ -77,6 +79,48 @@
 				</ul>
 		</div>
 	</footer>
+
+	<script>
+		var slideIndex = 1;
+		var touch = 0;
+		tiempo = false;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+			if(tiempo){
+				clearTimeout(tiempo);
+				tiempo= false;
+			}
+		  	showDivs(slideIndex += n);
+		}
+		
+		function plusTimerDivs(n){
+			showDivs(slideIndex += n);
+		}
+
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("imagen-panel-inicio");
+			if (n > x.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = x.length}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+			if(slideIndex==3){
+				document.getElementById("panel-inicio").style.backgroundColor = "black";
+			}
+			else{
+				document.getElementById("panel-inicio").style.backgroundColor = "#1b1b19";
+			}
+			x[slideIndex-1].style.display = "block";  
+			tiempo = setTimeout(timer, 3000);
+
+		}
+
+		function timer(){
+			plusTimerDivs(1);
+		}
+		</script>
 		
 
 </body>
