@@ -4,6 +4,7 @@
 		<title>Contacto - Keyboard on Action</title>
 		<meta charset="utf-8" lang="es-ES">
 		<link rel="stylesheet" type="text/css" href="/style.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	  <script type="text/javascript" src="/scripts/scripts.js"></script>
  	  	<script>menus()</script>  
 </head>
@@ -167,28 +168,46 @@
 	</body>
 
 	<script>
-        //document.getElementsByTagName('button')[0].addEventListener("click", myFunction);
-        
-        function myFunction() {
-            let nombre = document.getElementById("textoNombre");
-            let email = document.getElementById("textoEmail");
-            let mensaje = document.getElementsByClassName("input_mensaje")[0];
-            if(nombre.value.trim().length < 1){
-                alert("Introduce tu nombre");
-            }
-            else if(email.value.trim().length < 1){
-                alert("Introduce tu e-mail");
-            }
-            else if(mensaje.value.trim().length < 1){
-                alert("Introduce un mensaje");
-            }
-            else{
-                alert("Mensaje enviado");
-                nombre.value = "";
-                email.value = "";
-                mensaje.value = "";
-            }
-        }
+		function myFunction() {
+			let cond1=Mvalid($("#textoEmail").val());
+			let cond2=Nvalid($("#textoNombre").val());
+			let cond3=Dvalid($(".input_mensaje").val());
+			
+			if(cond1==false){
+				alert("El email no esta bien formado. Recuerda que debe contener, al menos, arroba, punto, y otros 3 caracteres");
+				$("#textoEmail").css({'border-color': 'red'});
+			}
+			else{
+				$("#textoEmail").css({'border-color': 'transparent'});
+			}
+			
+			if(cond2==false){
+				alert("El nombre de usuario debe contener, al menos, 5 caracteres");
+				$("#textoNombre").css({'border-color': 'red'});
+			}
+			else{
+				$("#textoNombre").css({'border-color': 'transparent'});
+			}
+			
+			if(cond3==false){
+				alert("No has escrito ningun mensaje");
+				$(".input_mensaje").css({'border-color': 'red'});
+			}
+			else{
+				$(".input_mensaje").css({'border-color': 'transparent'});
+			}
+			
+			if(cond1 && cond2 && cond3){
+				alert("¡Se ha enviado tu mensaje!");
+				$("#textoEmail").val("");
+				$("#textoNombre").val("");
+				$(".input_mensaje").val("");	
+			}
+		}
+				
+		Mvalid = mail => (mail.includes("@") && mail.includes(".") && (mail.trim().length >= 5));
+		Nvalid = name => (name.trim().length > 4);
+		Dvalid = mssg => (mssg.trim().length > 1);
     </script>
 
 </html>
