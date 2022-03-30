@@ -59,19 +59,10 @@ li.nav a:after{
     transition: transform 250ms ease-in-out;
 }
 
-li.nav a:hover:not(#active):after {
+li.nav a:hover:after {
     transform: scaleX(1);
 }
 
-li.nav a.active{
-    display: block;
-    font-family: 'Bitter', serif;
-    color: #eeeeee;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-bottom: 2px groove #4ecca3;
-}
 
 #logo_menu{
     float:left;

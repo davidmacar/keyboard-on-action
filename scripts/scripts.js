@@ -27,7 +27,7 @@ function cabecera(xml) {
 	let y=x[0].getElementsByTagName("ENTRADA");
 	h="";
 	for (let i=0;i<y.length;i++){
-		txt=txt+'<li class="nav"><a class="nav" href="' + y[i].getElementsByTagName("DIRECCION")[0].childNodes[0].nodeValue + '">' + y[i].getElementsByTagName("NOMBRE")[0].childNodes[0].nodeValue + '</a> </li>';
+		txt=txt+'<li class="nav"><a onmouseover = "hoverCabecera(this)" class="nav" href="' + y[i].getElementsByTagName("DIRECCION")[0].childNodes[0].nodeValue + '">' + y[i].getElementsByTagName("NOMBRE")[0].childNodes[0].nodeValue + '</a> </li>';
 	}
 	document.getElementById("navVar").innerHTML=txt;
 }; 
@@ -47,4 +47,12 @@ function footer(xml) {
 function menus(){
 	cargarCabecera();
 	cargarFooter();
+}
+
+function hoverCabecera(element){
+	
+	aft = element.lastChild;
+	console.log(aft);
+	aft.style.setProperty('transform', "scaleX(1)");
+	
 }
