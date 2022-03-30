@@ -4,28 +4,11 @@
 		<title>Página del Producto - Keyboard on Action</title>
 		<meta charset="utf-8" lang="es-ES">
 		<link rel="stylesheet" type="text/css" href="/style.css">
-		<script type="text/javascript" src="/scripts/jquery-3.6.0.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script type="text/javascript" src="/scripts/jquery.mlens-1.7.min.js"></script>
-		
-		<script type="text/javascript">
-			$(document).ready(function()
-			{
-				$("#imagen-producto").mlens(
-				{
-					imgSrc: $("#imagen-producto").attr("data-big"),	  // path of the hi-res version of the image
-					lensShape: "circle",                // shape of the lens (circle/square)
-					lensSize: 180,            // lens dimensions (in px or in % with respect to image dimensions)
-														// can be different for X and Y dimension
-					borderSize: 4,                  // size of the lens border (in px)
-					borderColor: "#fff",            // color of the lens border (#hex)
-					borderRadius: 0,                // border radius (optional, only if the shape is square)
-					zoomLevel: 1,          // zoom level multiplicator (number)
-					responsive: true       // true if mlens has to be responsive (boolean)
-				}); 
-				
-			});
-		</script>
-	</head>
+	  	<script type="text/javascript" src="/scripts/scripts.js"></script>
+ 	  	<script>menus()</script>  
+</head>
 	
 	
 
@@ -104,12 +87,7 @@
 		<!--Cabecera-->
 		<img id="logo_menu"  src="/imagenes/logo.png" width="100" height="100" alt="Logo de la plataforma">
 		<ul id="navVar">
-			<li class="nav"><a href="/index.html">Inicio</a> </li>
-			<li class="nav"><a href="/paginas/cajas/cajas.html">Cajas</a> </li>
-			<li class="nav"><a href="/paginas/teclados/teclados.html">Teclados</a> </li>
-			<li class="nav"><a href="/paginas/keycaps/keycaps.html">Keycaps</a> </li>
-			<li class="nav"><a href="/paginas/artistas/artistas.html">Artistas</a> </li>
-			<li class="nav"><a href="/paginas/contacto/contacto.html">Contacto</a> </li>
+			  
 		</ul>
 
 		<!--Breadcrumbs-->
@@ -153,16 +131,30 @@
 				<p>Si buscas una plataforma en la que expresar tu arte de forma accesible al público, estás en el lugar adecuado.</p>
 			</div>
 			<div class="footer-inferior">
-					<ul>
-						<li><a href="/index.html">Inicio</a></li>
-						<li><a href="/paginas/artistas/artistas.html">Artistas</a></li>
-						<li><a href="/paginas/teclados/teclados.html">Teclados</a></li>
-						<li><a href="/paginas/contacto/contacto.html">Contacto</a></li>
-					</ul>
+					<ul id="links-footer">
+			</ul>
 			</div>
 		</footer>
 		
 		
 	</body>
 	
+	<script>
+		$(document).ready(() =>
+		{
+			$("#imagen-producto").mlens(
+			{
+				imgSrc: $("#imagen-producto").attr("data-big"),	  // path of the hi-res version of the image
+				lensShape: "circle",                // shape of the lens (circle/square)
+				lensSize: 180,            // lens dimensions (in px or in % with respect to image dimensions)
+													// can be different for X and Y dimension
+				borderSize: 4,                  // size of the lens border (in px)
+				borderColor: "#fff",            // color of the lens border (#hex)
+				borderRadius: 0,                // border radius (optional, only if the shape is square)
+				zoomLevel: 1,          // zoom level multiplicator (number)
+				responsive: true       // true if mlens has to be responsive (boolean)
+			}); 
+			
+		});
+	</script>
 </html>

@@ -4,10 +4,11 @@
 		<title>Contacto - Keyboard on Action</title>
 		<meta charset="utf-8" lang="es-ES">
 		<link rel="stylesheet" type="text/css" href="/style.css">
-	</head>
+		<script type="text/javascript" src="/scripts/scripts.js"></script>
+ 	  	<script>menus()</script>  
+</head>
 	
 	<style>
-		/**/
 		.grid_layout{
 			display: grid;
 			justify-content: center;
@@ -102,12 +103,7 @@
 		<!--Cabecera-->
 		<img id="logo_menu"  src="/imagenes/logo.png" width="100" height="100" alt="Logo de la plataforma">
 		<ul id="navVar">
-			<li class="nav"><a href="/index.html">Inicio</a> </li>
-			<li class="nav"><a href="/paginas/cajas/cajas.html">Cajas</a> </li>
-			<li class="nav"><a href="/paginas/teclados/teclados.html">Teclados</a> </li>
-			<li class="nav"><a href="/paginas/keycaps/keycaps.html">Keycaps</a> </li>
-			<li class="nav"><a href="/paginas/artistas/artistas.html">Artistas</a> </li>
-			<li class="nav"><a href="/paginas/contacto/contacto.html">Contacto</a> </li>
+			  
 		</ul>
 
 		<!--Breadcrumbs-->
@@ -145,12 +141,12 @@
 				<form>
 					<label class="label" for="mensaje">Mensaje:</label>
 					<br>
-					<textarea class="input_mensaje" id="mensaje"  placeholder="Escribe aqui tu mensaje..."  name="mensaje"></textarea>
+					<textarea class="input_mensaje" placeholder="Escribe aqui tu mensaje..."  name="mensaje"></textarea>
 				</form>
 			</div>
 
 			<div class="enviar">
-				<button id="btnEnviar" class="boton">Enviar</button>
+				<button class="boton" onclick="myFunction()">Enviar</button>
 			</div>
 
 		</div>
@@ -163,17 +159,36 @@
 				<p>Si buscas una plataforma en la que expresar tu arte de forma accesible al público, estás en el lugar adecuado.</p>
 			</div>
 			<div class="footer-inferior">
-					<ul>
-						<li><a href="/index.html">Inicio</a></li>
-						<li><a href="/paginas/artistas/artistas.html">Artistas</a></li>
-						<li><a href="/paginas/teclados/teclados.html">Teclados</a></li>
-						<li><a href="/paginas/contacto/contacto.html">Contacto</a></li>
-					</ul>
+					<ul id="links-footer">
+			</ul>
 			</div>
 		</footer>
 		
-	
-		
-		
 	</body>
+
+	<script>
+        //document.getElementsByTagName('button')[0].addEventListener("click", myFunction);
+        
+        function myFunction() {
+            let nombre = document.getElementById("textoNombre");
+            let email = document.getElementById("textoEmail");
+            let mensaje = document.getElementsByClassName("input_mensaje")[0];
+            if(nombre.value.trim().length < 1){
+                alert("Introduce tu nombre");
+            }
+            else if(email.value.trim().length < 1){
+                alert("Introduce tu e-mail");
+            }
+            else if(mensaje.value.trim().length < 1){
+                alert("Introduce un mensaje");
+            }
+            else{
+                alert("Mensaje enviado");
+                nombre.value = "";
+                email.value = "";
+                mensaje.value = "";
+            }
+        }
+    </script>
+
 </html>
