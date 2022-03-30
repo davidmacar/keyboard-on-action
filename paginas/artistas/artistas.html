@@ -65,12 +65,12 @@
 	function zoom(){
 		$(".imagen-artista").on('mouseover', function(e){
 			$(e.target).closest(".bloque-artista").children("p").css({'font-size': '150%'});
-			$(e.target).closest(".imagen-artista").children("h1").css({'color': '#4ecca3'});
+			$(e.target).children("h1").css({'color': '#4ecca3'});
 		})
 		
 		$(".imagen-artista").on('mouseout', function(e){
 			$(e.target).closest(".bloque-artista").children("p").css({'font-size': '100%'});
-			$(e.target).closest(".imagen-artista").children("h1").css({'color': 'white'});
+			$(e.target).children("h1").css({'color': 'white'});
 		})
 	}
 </script>
