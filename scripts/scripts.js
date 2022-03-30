@@ -48,3 +48,17 @@ function menus(){
 	cargarCabecera();
 	cargarFooter();
 }
+
+function iluminar(){
+	let img=document.getElementById("logo_menu");
+	img.style.background="radial-gradient(farthest-side at center, #4ecca3 40%, #232931)";
+	img.style.height="115px";
+	img.style.width="115px";
+}
+
+function apagar(){
+	let img=document.getElementById("logo_menu");
+	img.style.background="#232931";
+	img.style.height="100px";
+	img.style.width="100px";
+}
