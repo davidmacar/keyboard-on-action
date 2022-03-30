@@ -24,45 +24,7 @@
     </div>
 
     <!--Lista de artistas-->
-    <div class="bloque-artista">
-        <a href="/paginas/artistas/info_artista.html">
-            <div class="imagen-artista">
-                <img src="/imagenes/john_wayne.png" alt="imagen artista"> 
-                <h1>John Wayne</h1>
-            </div>
-        </a>
-        <p>Descripción de pepe rodriguez: es un buen tipo la verdad es que se lo tiene merecido</p>
-    </div>
-
-    <div class="bloque-artista">
-        <a href="/paginas/artistas/info_artista.html">
-            <div class="imagen-artista">
-                <img src="/imagenes/rossy_de_palma.png" alt="imagen artista"> 
-                <h1>Rossy de Palma</h1>
-            </div>
-        </a>
-        <p>Descripción de pepe rodriguez: es un buen tipo la verdad es que se lo tiene merecido</p>
-    </div>
-
-    <div class="bloque-artista">
-        <a href="/paginas/artistas/info_artista.html">
-            <div class="imagen-artista">
-                <img src="/imagenes/jonah-jameson.png" alt="imagen artista"> 
-                <h1>Jonah Jameson</h1>
-            </div>
-        </a>
-        <p>Descripción de pepe rodriguez: es un buen tipo la verdad es que se lo tiene merecido</p>
-    </div>
-
-    <div class="bloque-artista">
-        <a href="/paginas/artistas/info_artista.html">
-            <div class="imagen-artista">
-                <img src="/imagenes/hannah_montana.png" alt="imagen artista"> 
-                <h1>Hannah Montana</h1>
-            </div>
-        </a>
-        <p>Descripción de pepe rodriguez: es un buen tipo la verdad es que se lo tiene merecido</p>
-    </div>
+    <div id="lista-artistas"></div>
     
     <!--Footer-->
     <div class="separador-footer"> </div>
@@ -80,6 +42,25 @@
                 </ul>
         </div>
     </footer>
-
 </body>
+
+<script>
+    function cargar(){
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function() {
+            if(this.readyState==4 && this.status==200) {
+                var jsonObj=JSON.parse(this.responseText);
+                var txt='';
+                for(x in jsonObj.Artistas) {
+                    txt+='<div class="bloque-artista"> <a href="' + jsonObj.Artistas[x].Web + '"> <div class="imagen-artista"> <img src="' + jsonObj.Artistas[x].Imagen + '"alt="artista"> <h1>' + jsonObj.Artistas[x].Nombre + '</h1> </div> </a> <p>' + jsonObj.Artistas[x].Descripcion + '</p> </div>';
+                }
+                document.getElementById('lista-artistas').innerHTML=txt;
+            }
+        }
+        xhttp.open('GET','/paginas/artistas/artistas.json',true);
+        xhttp.send();
+    }
+    cargar()
+</script>
+
 </html>

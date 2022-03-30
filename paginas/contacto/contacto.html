@@ -7,7 +7,6 @@
 	</head>
 	
 	<style>
-		/**/
 		.grid_layout{
 			display: grid;
 			justify-content: center;
@@ -145,7 +144,7 @@
 				<form>
 					<label class="label" for="mensaje">Mensaje:</label>
 					<br>
-					<textarea class="input_mensaje" id="mensaje"  placeholder="Escribe aqui tu mensaje..."  name="mensaje"></textarea>
+					<textarea class="input_mensaje" id="textoEnviar"  placeholder="Escribe aqui tu mensaje..."  name="mensaje"></textarea>
 				</form>
 			</div>
 
@@ -172,8 +171,31 @@
 			</div>
 		</footer>
 		
-	
-		
-		
 	</body>
+
+	<script>
+        document.getElementById("btnEnviar").addEventListener("click", myFunction);
+        
+        function myFunction() {
+            var nombre = document.getElementById("textoNombre");
+            var email = document.getElementById("textoEmail");
+            var mensaje = document.getElementById("textoEnviar");
+            if(nombre.value.trim().length < 1){
+                alert("Introduce tu nombre");
+            }
+            else if(email.value.trim().length < 1){
+                alert("Introduce tu e-mail");
+            }
+            else if(mensaje.value.trim().length < 1){
+                alert("Introduce un mensaje");
+            }
+            else{
+                alert("Mensaje enviado");
+                nombre.value = "";
+                email.value = "";
+                mensaje.value = "";
+            }
+        }
+    </script>
+
 </html>
