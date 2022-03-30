@@ -1,5 +1,5 @@
 function cargarCabecera(){
-	var xhttp = new XMLHttpRequest();
+	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			cabecera(this);
@@ -10,7 +10,7 @@ function cargarCabecera(){
 }
 
 function cargarFooter(){
-	var xhttp = new XMLHttpRequest();
+	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			footer(this);
@@ -21,25 +21,30 @@ function cargarFooter(){
 }
 
 function cabecera(xml) {
-	var xmlDoc=xml.responseXML;
-	var txt="";
-	var x=xmlDoc.getElementsByTagName("CABECERA");
-	var y=x[0].getElementsByTagName("ENTRADA");
+	let xmlDoc=xml.responseXML;
+	let txt="";
+	let x=xmlDoc.getElementsByTagName("CABECERA");
+	let y=x[0].getElementsByTagName("ENTRADA");
 	h="";
-	for (var i=0;i<y.length;i++){
+	for (let i=0;i<y.length;i++){
 		txt=txt+'<li class="nav"><a class="nav" href="' + y[i].getElementsByTagName("DIRECCION")[0].childNodes[0].nodeValue + '">' + y[i].getElementsByTagName("NOMBRE")[0].childNodes[0].nodeValue + '</a> </li>';
 	}
 	document.getElementById("navVar").innerHTML=txt;
 }; 
 
 function footer(xml) {
-	var xmlDoc=xml.responseXML;
-	var txt="";
-	var x=xmlDoc.getElementsByTagName("FOOTER");
-	var y=x[0].getElementsByTagName("ENTRADA");
+	let xmlDoc=xml.responseXML;
+	let txt="";
+	let x=xmlDoc.getElementsByTagName("FOOTER");
+	let y=x[0].getElementsByTagName("ENTRADA");
 	h="";
-	for (var i=0;i<y.length;i++){
+	for (let i=0;i<y.length;i++){
 		txt=txt+'<li> <a href="' + y[i].getElementsByTagName("DIRECCION")[0].childNodes[0].nodeValue + '">' + y[i].getElementsByTagName("NOMBRE")[0].childNodes[0].nodeValue + '</a> </li>';
 	}
 	document.getElementById("links-footer").innerHTML=txt;
 }; 
+
+function menus(){
+	cargarCabecera();
+	cargarFooter();
+}
