@@ -25,12 +25,19 @@ a{
 
 /*Barra de navegacion*/
 
+#cabecera{
+    display: grid;
+    grid-template-areas: "logo_menu navVar perfil_usuario";
+}
+
 #navVar{
     width: 100%;
     list-style-type: none;
     overflow: hidden;
     padding: 25px 0px 25px 0px;
     text-align: center;
+    grid-area: navVar;
+    justify-content: center;
 }
 
 li.nav{
@@ -38,7 +45,7 @@ li.nav{
 }
 
 
-li.nav a{
+li.nav a, #perfil_usuario > a{
     display: block;
     
     font-variant: small-caps;
@@ -50,7 +57,7 @@ li.nav a{
     text-decoration: none;
 }
 
-li.nav a:after{
+li.nav a:after, #perfil_usuario > a:after{
     display: block;
     content: '';
     border-bottom: 2px groove #4ecca3;
@@ -59,11 +66,11 @@ li.nav a:after{
     transition: transform 250ms ease-in-out;
 }
 
-li.nav a:hover:not(#active):after {
+li.nav a:hover:not(#active):after, #perfil_usuario > a:hover:not(#active):after{
     transform: scaleX(1);
 }
 
-li.nav a.active{
+li.nav a.active, #perfil_usuario > a.active{
     display: block;
     font-family: 'Bitter', serif;
     color: #eeeeee;
@@ -73,10 +80,27 @@ li.nav a.active{
     border-bottom: 2px groove #4ecca3;
 }
 
-#logo_menu{
-    float:left;
-    position: absolute;
+#contenedor_logo{
+    grid-area: logo_menu;
+    margin: auto auto auto 0;
+    padding: 7.5px;
 }
+
+#logo_menu{
+    margin: 0;
+}
+
+#perfil_usuario{
+    grid-area: perfil_usuario;
+    justify-content: right;
+    display: flex;
+    margin: auto 0 auto auto;
+}   
+
+#perfil_usuario > img{
+    margin: 10px 12px;
+}
+
 
 /*Páginas de productos*/
 .flex-contenedor{
@@ -232,10 +256,6 @@ li.nav a.active{
 
 .breadcrumb > a:hover + a:before, .breadcrumb > a .active + a:before {
     border-color: transparent transparent transparent #4ecca3;
-}
-
-.breadcrumb > a:first-child {
-    /*Para el primer elemento de los breadcrumbs (antes era para ponerle un margen redondeado  la izuqierda)*/
 }
 
 .breadcrumb > a:last-child{
@@ -402,3 +422,60 @@ footer{
 .boton-pagina-artista:hover{
     background-color:#4ecca3;
 }
+
+/*Login page*/
+
+.login-formulario {
+    width: 70vh;
+    margin: 65px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+
+.datos input {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    padding: 10px 1px;
+    border: 0;
+    border-bottom: 1px solid #4ecca3;
+    outline: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    background: none;
+    color: #eeeeee;
+}
+
+::-ms-reveal {
+    filter: invert(100%);
+}
+
+.botones{
+    display: flex;
+    margin: 0;
+    margin-top: 2vh;
+    width: 100%;
+}
+
+.botones button{
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px;
+    width: 100%;
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+    background: none;
+    color: #eeeeee;;
+    
+    box-shadow: -5px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.botones button:hover{
+    background-color: rgb(78, 204, 163, 0.5);
+}
+  
