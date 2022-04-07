@@ -436,18 +436,24 @@ footer{
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
 
+.datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
 .datos input {
-    font-size: 22px;
-    display: block;
     width: 100%;
+    font-size: 22px;
     padding: 10px 1px;
     border: 0;
     border-bottom: 1px solid #4ecca3;
     outline: none;
-    -webkit-transition: all .2s;
-    transition: all .2s;
     background: none;
     color: #eeeeee;
+
 }
 
 ::-ms-reveal {
@@ -479,3 +485,29 @@ footer{
     background-color: rgb(78, 204, 163, 0.5);
 }
   
+/*Codigo para los rellenados del autocompletado del input*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+  -webkit-text-fill-color: #eeeeee;
+  -webkit-box-shadow: 0 0 0px 1000px #232931 inset;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

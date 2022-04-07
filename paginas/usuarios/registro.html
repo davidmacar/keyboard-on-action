@@ -16,7 +16,7 @@
 		margin-left: auto; 
 		margin-right: auto;
 	}
-	
+
 </style>
 <body>
 	<!--Cabecera-->
@@ -26,34 +26,34 @@
 		</div>
 		<div id="perfil_usuario">
 			<img id= "imagen_usuario" src="/imagenes/usuario.png" width="50" height="50" alt="Logo de la plataforma">
-			<a href="/paginas/login/login.html"> Iniciar sesion</a>
+			<a href="/paginas/usuarios/login.html"> Iniciar sesion</a>
 		</div>
-		
+
 		<ul id="navVar">
-		
+
 		</ul>
 	</div>
-	
+
 	<!--Breadcrumbs-->
 	<div class="breadcrumb">
 		<a href="/index.html">Inicio</a>
-		<a>Login</a>
+		<a>Registro</a>
 	</div>
 
 	<!--Login-->
 	<form class="login-formulario" action="">
-		<h1>Login</h1>
+		<h1>Registro</h1>
 		<div class="datos">
-			<div class="entrada-login">
-				<input type="email" placeholder="Email" >
-			</div>
-			<div class="entrada-login">
-				<input type="password" placeholder="Password">
-			</div>
+			<input id="userame" type="username" placeholder="Nombre usuario">
+			<input id="telefono" type="number" placeholder="Numero de telefono (Opcional)">
+			<input id="email" type="email" placeholder="Email">
+			<input id="email2" type="email" placeholder="Repite el Email">
+			<input id="password" type="password" placeholder="Password">
+			<input id="password2" type="password" placeholder="Repite Password">
 		</div>	
 		<div class="botones">
-			<button>Registrarse</button>
-			<button>Login</button>
+			<button type="button" onclick="window.location.href = '/paginas/usuarios/login.html'">Login</button>
+			<button type="submit">Enviar</button>
 		</div>
 	</form>
 
